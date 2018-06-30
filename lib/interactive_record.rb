@@ -7,6 +7,6 @@ class InteractiveRecord #will be superclass to student
   def table_name
     #table name is class name, lowercase and pluralized(active_support/inflector?)
     self.to_s.downcase.pluralized
-  end 
-  
+  end
+
 end
