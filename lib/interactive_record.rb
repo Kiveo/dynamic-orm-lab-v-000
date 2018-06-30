@@ -15,4 +15,6 @@ class InteractiveRecord #will be superclass to student
     sql = "PRAGMA table_info('#{table_name}')"
     table_info = DB[:conn].execute(sql)
     column_names = table_info.collect{|row| row["name"]}.compact #compact to avoid nil values
+  end
+
 end
