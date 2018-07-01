@@ -31,12 +31,12 @@ class InteractiveRecord #will be superclass to student
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
-  def values_for_insert #grab words, unless nil, and join result
-    values = []
-    self.class.column_names.each do |col_name|
-      values << "'#{send(col_name)}'" unless send(col_name).nil?
-    end
+  def values_for_insert 
+    values= []
+    self.class.column_names.each do |col_name| 
+      values << "send('#{col_name}')" unless send(col_name).nil? 
+    end 
     values.join(", ")
-  end
+  end 
 
 end
