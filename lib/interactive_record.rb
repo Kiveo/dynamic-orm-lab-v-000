@@ -19,7 +19,7 @@ class InteractiveRecord #will be superclass to student
 
   def initialize(options={})
     options.each do |property, value|
-      self.send("#{property}", value)
+      self.send("#{property}=", value)
     end
   end
 
