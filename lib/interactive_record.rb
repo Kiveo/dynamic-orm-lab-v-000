@@ -18,8 +18,8 @@ class InteractiveRecord #will be superclass to student
   end
 
   def initialize(options={}) #set options as a hash, then assign key-value pairs
-    options.each do |key, value|
-      self.send("#{key}", value)
+    options.each do |property, value|
+      self.send("#{property}", value)
     end
   end
 
