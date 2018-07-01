@@ -51,6 +51,4 @@ class InteractiveRecord #will be superclass to student
   end
 
 
-  end
-
 end
