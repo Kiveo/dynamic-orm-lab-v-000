@@ -50,8 +50,7 @@ class InteractiveRecord #will be superclass to student
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(attribute)
-    @label = attribute
+  def self.find_by(attribute_hash)
     sql = "SELECT * FROM #{self.table_name} WHERE #{self.label} = '#{attribute}'"
     DB[:conn].execute(sql)
   end
