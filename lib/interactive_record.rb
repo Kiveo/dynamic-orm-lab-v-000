@@ -39,4 +39,10 @@ class InteractiveRecord #will be superclass to student
     values.join(", ")
   end
 
+  def save #use sql insert, and then get the id
+    sql = "INSERT INTO #{table_name_for_insert} SET #{col_names_for_insert} VALUES #{values_for_insert}"
+    DB[:conn].execute(sql)
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
+  end
+
 end
