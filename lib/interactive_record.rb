@@ -46,7 +46,7 @@ class InteractiveRecord #will be superclass to student
   end
 
   def self.find_by_name(name)
-    sql = "SELECT * FROM #{table_name} WHERE name = #{name}"
+    sql = "SELECT * FROM #{self.table_name} WHERE name = #{name}"
     DB[:conn].execute(sql)
   end
 
