@@ -17,10 +17,10 @@ class InteractiveRecord #will be superclass to student
     column_names = table_info.collect{|row| row["name"]}.compact #compact to avoid nil values
   end
 
-  def initialize(options={}) #set options as a hash, then assign key-value pairs 
+  def initialize(options={}) #set options as a hash, then assign key-value pairs
     options.each do |key, value|
       self.send("#{key}", value)
-    end 
-  end 
-   
+    end
+  end
+
 end
