@@ -50,7 +50,7 @@ class InteractiveRecord #will be superclass to student
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(attribute_hash) #hash format, thus  must access keys and values 
+  def self.find_by(attribute_hash) #hash format, thus  must access keys and values
     sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first} = '#{attribute_hash.values.first}'"
     DB[:conn].execute(sql)
   end
