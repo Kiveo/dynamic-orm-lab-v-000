@@ -27,4 +27,8 @@ class InteractiveRecord #will be superclass to student
     self.class.table_name
   end
 
+  def col_names_for_insert #add class call, then delete any col id entries, and finally join the results back together
+    self.class.column_names.delete_if {|col| col == "id"}.join(", ") 
+  end 
+  
 end
